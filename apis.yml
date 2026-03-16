@@ -1,0 +1,35 @@
+aid: apache-rocketmq
+name: Apache RocketMQ
+description: >-
+  Apache RocketMQ is a distributed messaging and streaming platform with low latency, high performance, and reliability. It provides trillion-level message capacity with rich message types including normal, transactional, delayed, and ordered messages.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Messaging
+  - Streaming
+  - Message Queue
+  - Distributed Systems
+created: '2026-03-16'
+modified: '2026-03-16'
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/apache-rocketmq/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+apis:
+  - aid: apache-rocketmq:apache-rocketmq
+    name: Apache RocketMQ
+    description: >-
+      RocketMQ provides producer and consumer APIs with client SDKs in Java, Go, Python, C++, C#, Node.js, and Rust, along with a REST API and gRPC-based remoting for message operations, topic management, and cluster administration.
+    humanURL: https://rocketmq.apache.org/docs/
+    tags:
+      - SDK
+      - Messaging
+      - gRPC
+      - REST
+    properties:
+      - type: Documentation
+        url: https://rocketmq.apache.org/docs/
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
