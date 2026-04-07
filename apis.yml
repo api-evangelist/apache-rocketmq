@@ -7,10 +7,10 @@ position: Consumer
 access: 3rd-Party
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
+  - Distributed Systems
+  - Message Queue
   - Messaging
   - Streaming
-  - Message Queue
-  - Distributed Systems
 created: '2026-03-16'
 modified: '2026-03-16'
 url: >-
@@ -23,10 +23,10 @@ apis:
       RocketMQ provides producer and consumer APIs with client SDKs in Java, Go, Python, C++, C#, Node.js, and Rust, along with a REST API and gRPC-based remoting for message operations, topic management, and cluster administration.
     humanURL: https://rocketmq.apache.org/docs/
     tags:
-      - SDK
-      - Messaging
       - gRPC
+      - Messaging
       - REST
+      - SDK
     properties:
       - type: Documentation
         url: https://rocketmq.apache.org/docs/
