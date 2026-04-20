@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-rocketmq/refs/heads/main/json-structure/apache-rocketmq-consumer-group-structure.json",
+  "description": "RocketMQ consumer group",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Consumer group name"
+    },
+    "consumeFromWhere": {
+      "type": "string",
+      "enum": [
+        "CONSUME_FROM_LAST_OFFSET",
+        "CONSUME_FROM_FIRST_OFFSET",
+        "CONSUME_FROM_TIMESTAMP"
+      ]
+    },
+    "consumeType": {
+      "type": "string",
+      "enum": [
+        "CONSUME_ACTIVELY",
+        "CONSUME_PASSIVELY"
+      ]
+    },
+    "messageModel": {
+      "type": "string",
+      "enum": [
+        "BROADCASTING",
+        "CLUSTERING"
+      ]
+    }
+  },
+  "name": "ConsumerGroup"
+}

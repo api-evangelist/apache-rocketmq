@@ -1,0 +1,12 @@
+{
+  "msgId": "500123",
+  "topic": "example",
+  "body": "example",
+  "tag": "example",
+  "keys": [
+    "example"
+  ],
+  "properties": {},
+  "bornTimestamp": 1234,
+  "receiptHandle": "example"
+}

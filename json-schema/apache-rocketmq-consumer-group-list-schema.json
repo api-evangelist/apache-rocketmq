@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-rocketmq/refs/heads/main/json-schema/apache-rocketmq-consumer-group-list-schema.json",
+  "title": "ConsumerGroupList",
+  "description": "List of consumer groups",
+  "type": "object",
+  "properties": {
+    "groups": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ConsumerGroup"
+      }
+    },
+    "total": {
+      "type": "integer"
+    }
+  }
+}

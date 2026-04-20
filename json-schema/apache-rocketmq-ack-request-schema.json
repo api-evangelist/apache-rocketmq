@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-rocketmq/refs/heads/main/json-schema/apache-rocketmq-ack-request-schema.json",
+  "title": "AckRequest",
+  "description": "Request to acknowledge a message",
+  "type": "object",
+  "properties": {
+    "receiptHandle": {
+      "type": "string",
+      "description": "Receipt handle from receive response"
+    },
+    "topic": {
+      "type": "string",
+      "description": "Topic name"
+    },
+    "consumerGroup": {
+      "type": "string",
+      "description": "Consumer group"
+    }
+  },
+  "required": [
+    "receiptHandle",
+    "topic",
+    "consumerGroup"
+  ]
+}

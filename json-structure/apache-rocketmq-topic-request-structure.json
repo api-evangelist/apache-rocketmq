@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-rocketmq/refs/heads/main/json-structure/apache-rocketmq-topic-request-structure.json",
+  "description": "Request to create a RocketMQ topic",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Topic name"
+    },
+    "clusterName": {
+      "type": "string",
+      "description": "Target cluster"
+    },
+    "queueNum": {
+      "type": "int32",
+      "description": "Number of queues (default 8)"
+    },
+    "perm": {
+      "type": "int32",
+      "description": "Permission (6 = read+write)"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "name": "TopicRequest"
+}

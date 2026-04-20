@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-rocketmq/refs/heads/main/json-structure/apache-rocketmq-receive-result-structure.json",
+  "description": "Result of receiving messages",
+  "type": "object",
+  "properties": {
+    "messages": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Message"
+      }
+    }
+  },
+  "name": "ReceiveResult"
+}

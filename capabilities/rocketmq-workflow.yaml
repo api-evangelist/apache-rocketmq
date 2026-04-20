@@ -1,0 +1,70 @@
+name: Apache RocketMQ Messaging Workflow
+description: Workflow capability for producing and consuming messages with Apache RocketMQ.
+version: 1.0.0-alpha1
+apis:
+  - name: Apache RocketMQ REST API
+    url: https://raw.githubusercontent.com/api-evangelist/apache-rocketmq/refs/heads/main/apis.yml
+shared:
+  - url: capabilities/shared/rocketmq-api.yaml
+workflow:
+  name: rocketmq-workflow
+  description: Manage topics, send and receive messages, and monitor broker health with Apache RocketMQ.
+  steps:
+    - name: create-topic
+      description: Create a message topic
+      api: Apache RocketMQ REST API
+      operation: createTopic
+    - name: create-consumer-group
+      description: Create a consumer group
+      api: Apache RocketMQ REST API
+      operation: createConsumerGroup
+    - name: send-message
+      description: Send a message to a topic
+      api: Apache RocketMQ REST API
+      operation: sendMessage
+    - name: receive-messages
+      description: Receive messages from a topic
+      api: Apache RocketMQ REST API
+      operation: receiveMessages
+    - name: acknowledge-message
+      description: Acknowledge message consumption
+      api: Apache RocketMQ REST API
+      operation: acknowledgeMessage
+exposes:
+  - type: rest
+    port: 8081
+    paths:
+      - /topics
+      - /topics/{topic}
+      - /messages
+      - /messages/receive
+      - /messages/ack
+      - /consumer-groups
+      - /brokers
+  - type: mcp
+    port: 9090
+    tools:
+      - name: list-topics
+        description: List RocketMQ topics
+        operation: listTopics
+      - name: create-topic
+        description: Create a RocketMQ topic
+        operation: createTopic
+      - name: send-message
+        description: Send a message to a topic
+        operation: sendMessage
+      - name: receive-messages
+        description: Pull messages from a topic
+        operation: receiveMessages
+      - name: acknowledge-message
+        description: Acknowledge message consumption
+        operation: acknowledgeMessage
+      - name: list-consumer-groups
+        description: List consumer groups
+        operation: listConsumerGroups
+      - name: create-consumer-group
+        description: Create a consumer group
+        operation: createConsumerGroup
+      - name: list-brokers
+        description: List cluster brokers
+        operation: listBrokers

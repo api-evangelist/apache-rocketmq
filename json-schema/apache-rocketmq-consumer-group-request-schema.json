@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-rocketmq/refs/heads/main/json-schema/apache-rocketmq-consumer-group-request-schema.json",
+  "title": "ConsumerGroupRequest",
+  "description": "Request to create a consumer group",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Consumer group name"
+    },
+    "consumeFromWhere": {
+      "type": "string",
+      "enum": [
+        "CONSUME_FROM_LAST_OFFSET",
+        "CONSUME_FROM_FIRST_OFFSET"
+      ]
+    },
+    "messageModel": {
+      "type": "string",
+      "enum": [
+        "BROADCASTING",
+        "CLUSTERING"
+      ]
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

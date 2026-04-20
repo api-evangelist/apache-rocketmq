@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-rocketmq/refs/heads/main/json-schema/apache-rocketmq-broker-schema.json",
+  "title": "Broker",
+  "description": "RocketMQ broker",
+  "type": "object",
+  "properties": {
+    "brokerName": {
+      "type": "string",
+      "description": "Broker name"
+    },
+    "clusterId": {
+      "type": "string",
+      "description": "Cluster identifier"
+    },
+    "brokerId": {
+      "type": "integer",
+      "description": "Broker ID (0=master, >0=slave)"
+    },
+    "brokerAddr": {
+      "type": "string",
+      "description": "Broker address (host:port)"
+    },
+    "version": {
+      "type": "string",
+      "description": "Broker version"
+    }
+  }
+}

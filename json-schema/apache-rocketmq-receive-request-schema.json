@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-rocketmq/refs/heads/main/json-schema/apache-rocketmq-receive-request-schema.json",
+  "title": "ReceiveRequest",
+  "description": "Request to receive messages from a topic",
+  "type": "object",
+  "properties": {
+    "topic": {
+      "type": "string",
+      "description": "Topic to consume from"
+    },
+    "consumerGroup": {
+      "type": "string",
+      "description": "Consumer group identifier"
+    },
+    "maxMessages": {
+      "type": "integer",
+      "description": "Maximum messages to pull"
+    },
+    "invisibleDuration": {
+      "type": "integer",
+      "description": "Invisible duration in milliseconds"
+    }
+  },
+  "required": [
+    "topic",
+    "consumerGroup"
+  ]
+}

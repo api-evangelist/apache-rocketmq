@@ -1,0 +1,158 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "rock": "https://rocketmq.apache.org/schema/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "TopicList": "rock:TopicList",
+    "Topic": "rock:Topic",
+    "TopicRequest": "rock:TopicRequest",
+    "MessageRequest": "rock:MessageRequest",
+    "SendResult": "rock:SendResult",
+    "ReceiveRequest": "rock:ReceiveRequest",
+    "ReceiveResult": "rock:ReceiveResult",
+    "Message": "rock:Message",
+    "AckRequest": "rock:AckRequest",
+    "ConsumerGroupList": "rock:ConsumerGroupList",
+    "ConsumerGroup": "rock:ConsumerGroup",
+    "ConsumerGroupRequest": "rock:ConsumerGroupRequest",
+    "BrokerList": "rock:BrokerList",
+    "Broker": "rock:Broker",
+    "topics": {
+      "@id": "rock:topics",
+      "@container": "@set"
+    },
+    "total": {
+      "@id": "rock:total",
+      "@type": "xsd:integer"
+    },
+    "name": {
+      "@id": "rock:name",
+      "@type": "schema:name"
+    },
+    "clusterName": {
+      "@id": "rock:clusterName",
+      "@type": "xsd:string"
+    },
+    "queueNum": {
+      "@id": "rock:queueNum",
+      "@type": "xsd:integer"
+    },
+    "perm": {
+      "@id": "rock:perm",
+      "@type": "xsd:integer"
+    },
+    "topicFilterType": {
+      "@id": "rock:topicFilterType",
+      "@type": "xsd:string"
+    },
+    "topic": {
+      "@id": "rock:topic",
+      "@type": "xsd:string"
+    },
+    "body": {
+      "@id": "rock:body",
+      "@type": "xsd:string"
+    },
+    "tag": {
+      "@id": "rock:tag",
+      "@type": "xsd:string"
+    },
+    "keys": {
+      "@id": "rock:keys",
+      "@container": "@set"
+    },
+    "properties": {
+      "@id": "rock:properties",
+      "@type": "xsd:string"
+    },
+    "delayLevel": {
+      "@id": "rock:delayLevel",
+      "@type": "xsd:integer"
+    },
+    "msgId": {
+      "@id": "rock:msgId",
+      "@type": "xsd:string"
+    },
+    "offsetMsgId": {
+      "@id": "rock:offsetMsgId",
+      "@type": "xsd:string"
+    },
+    "queueOffset": {
+      "@id": "rock:queueOffset",
+      "@type": "xsd:integer"
+    },
+    "queueId": {
+      "@id": "rock:queueId",
+      "@type": "xsd:integer"
+    },
+    "sendStatus": {
+      "@id": "rock:sendStatus",
+      "@type": "xsd:string"
+    },
+    "consumerGroup": {
+      "@id": "rock:consumerGroup",
+      "@type": "xsd:string"
+    },
+    "maxMessages": {
+      "@id": "rock:maxMessages",
+      "@type": "xsd:integer"
+    },
+    "invisibleDuration": {
+      "@id": "rock:invisibleDuration",
+      "@type": "xsd:integer"
+    },
+    "messages": {
+      "@id": "rock:messages",
+      "@container": "@set"
+    },
+    "bornTimestamp": {
+      "@id": "rock:bornTimestamp",
+      "@type": "xsd:integer"
+    },
+    "receiptHandle": {
+      "@id": "rock:receiptHandle",
+      "@type": "xsd:string"
+    },
+    "groups": {
+      "@id": "rock:groups",
+      "@container": "@set"
+    },
+    "consumeFromWhere": {
+      "@id": "rock:consumeFromWhere",
+      "@type": "xsd:string"
+    },
+    "consumeType": {
+      "@id": "rock:consumeType",
+      "@type": "xsd:string"
+    },
+    "messageModel": {
+      "@id": "rock:messageModel",
+      "@type": "xsd:string"
+    },
+    "brokers": {
+      "@id": "rock:brokers",
+      "@container": "@set"
+    },
+    "brokerName": {
+      "@id": "rock:brokerName",
+      "@type": "xsd:string"
+    },
+    "clusterId": {
+      "@id": "rock:clusterId",
+      "@type": "xsd:string"
+    },
+    "brokerId": {
+      "@id": "rock:brokerId",
+      "@type": "xsd:integer"
+    },
+    "brokerAddr": {
+      "@id": "rock:brokerAddr",
+      "@type": "xsd:string"
+    },
+    "version": {
+      "@id": "rock:version",
+      "@type": "xsd:string"
+    }
+  }
+}

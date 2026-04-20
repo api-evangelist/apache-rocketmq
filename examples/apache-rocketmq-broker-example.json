@@ -1,0 +1,7 @@
+{
+  "brokerName": "example-name",
+  "clusterId": "500123",
+  "brokerId": 1234,
+  "brokerAddr": "example",
+  "version": "example"
+}

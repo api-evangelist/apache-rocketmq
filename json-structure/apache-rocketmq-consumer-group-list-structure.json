@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-rocketmq/refs/heads/main/json-structure/apache-rocketmq-consumer-group-list-structure.json",
+  "description": "List of consumer groups",
+  "type": "object",
+  "properties": {
+    "groups": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ConsumerGroup"
+      }
+    },
+    "total": {
+      "type": "int32"
+    }
+  },
+  "name": "ConsumerGroupList"
+}

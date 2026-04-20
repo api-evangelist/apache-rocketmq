@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-rocketmq/refs/heads/main/json-schema/apache-rocketmq-topic-request-schema.json",
+  "title": "TopicRequest",
+  "description": "Request to create a RocketMQ topic",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Topic name"
+    },
+    "clusterName": {
+      "type": "string",
+      "description": "Target cluster"
+    },
+    "queueNum": {
+      "type": "integer",
+      "description": "Number of queues (default 8)"
+    },
+    "perm": {
+      "type": "integer",
+      "description": "Permission (6 = read+write)"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

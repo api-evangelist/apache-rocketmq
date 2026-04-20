@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-rocketmq/refs/heads/main/json-structure/apache-rocketmq-topic-structure.json",
+  "description": "RocketMQ topic",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Topic name"
+    },
+    "clusterName": {
+      "type": "string",
+      "description": "Cluster name"
+    },
+    "queueNum": {
+      "type": "int32",
+      "description": "Number of message queues"
+    },
+    "perm": {
+      "type": "int32",
+      "description": "Permission flags (2=write, 4=read, 6=read+write)"
+    },
+    "topicFilterType": {
+      "type": "string",
+      "enum": [
+        "SINGLE_TAG",
+        "MULTI_TAG"
+      ]
+    }
+  },
+  "name": "Topic"
+}

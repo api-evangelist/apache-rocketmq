@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-rocketmq/refs/heads/main/json-schema/apache-rocketmq-send-result-schema.json",
+  "title": "SendResult",
+  "description": "Result of sending a message",
+  "type": "object",
+  "properties": {
+    "msgId": {
+      "type": "string",
+      "description": "Message identifier"
+    },
+    "offsetMsgId": {
+      "type": "string",
+      "description": "Physical offset message ID"
+    },
+    "queueOffset": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Queue offset of the message"
+    },
+    "queueId": {
+      "type": "integer",
+      "description": "Queue ID the message was sent to"
+    },
+    "sendStatus": {
+      "type": "string",
+      "enum": [
+        "SEND_OK",
+        "FLUSH_DISK_TIMEOUT",
+        "FLUSH_SLAVE_TIMEOUT",
+        "SLAVE_NOT_AVAILABLE"
+      ]
+    }
+  }
+}

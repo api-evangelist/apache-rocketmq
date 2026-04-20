@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-rocketmq/refs/heads/main/json-structure/apache-rocketmq-message-request-structure.json",
+  "description": "Request to send a message to RocketMQ",
+  "type": "object",
+  "properties": {
+    "topic": {
+      "type": "string",
+      "description": "Target topic name"
+    },
+    "body": {
+      "type": "string",
+      "description": "Message body content"
+    },
+    "tag": {
+      "type": "string",
+      "description": "Message tag for filtering"
+    },
+    "keys": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Message keys for lookup"
+    },
+    "properties": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "User-defined message properties"
+    },
+    "delayLevel": {
+      "type": "int32",
+      "description": "Delay level for scheduled messages (0=no delay)"
+    }
+  },
+  "required": [
+    "topic",
+    "body"
+  ],
+  "name": "MessageRequest"
+}

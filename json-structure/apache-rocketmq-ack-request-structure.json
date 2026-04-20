@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-rocketmq/refs/heads/main/json-structure/apache-rocketmq-ack-request-structure.json",
+  "description": "Request to acknowledge a message",
+  "type": "object",
+  "properties": {
+    "receiptHandle": {
+      "type": "string",
+      "description": "Receipt handle from receive response"
+    },
+    "topic": {
+      "type": "string",
+      "description": "Topic name"
+    },
+    "consumerGroup": {
+      "type": "string",
+      "description": "Consumer group"
+    }
+  },
+  "required": [
+    "receiptHandle",
+    "topic",
+    "consumerGroup"
+  ],
+  "name": "AckRequest"
+}

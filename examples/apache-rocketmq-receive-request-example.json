@@ -1,0 +1,6 @@
+{
+  "topic": "example",
+  "consumerGroup": "example",
+  "maxMessages": 1234,
+  "invisibleDuration": 1234
+}

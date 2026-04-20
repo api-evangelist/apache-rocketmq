@@ -1,0 +1,51 @@
+name: Apache RocketMQ Vocabulary
+description: Unified taxonomy mapping messaging resources, actions, workflows, and personas for Apache RocketMQ.
+version: 1.0.0
+operational:
+  apis:
+    - name: Apache RocketMQ REST API
+      description: REST API for managing topics, messages, and consumer groups
+  resources:
+    - name: Topic
+      description: Named channel for publishing and subscribing to messages
+    - name: Message
+      description: Unit of data sent through a topic
+    - name: ConsumerGroup
+      description: Group of consumers sharing message consumption
+    - name: Broker
+      description: RocketMQ broker node storing and forwarding messages
+    - name: Queue
+      description: Physical message queue partition within a topic
+  actions:
+    - name: Produce
+      description: Send messages to RocketMQ topics
+    - name: Consume
+      description: Pull and acknowledge messages from topics
+    - name: Manage
+      description: Create and manage topics and consumer groups
+    - name: Monitor
+      description: Monitor broker and consumer group health
+  authentication:
+    - name: ACL
+      description: RocketMQ access control list for producer/consumer authorization
+capability:
+  workflows:
+    - name: Messaging Workflow
+      description: End-to-end workflow for producing and consuming RocketMQ messages
+  personas:
+    - name: Application Developer
+      description: Developer building messaging applications with RocketMQ
+    - name: Platform Engineer
+      description: Engineer managing RocketMQ clusters and topics
+  domains:
+    - name: Messaging
+      description: Reliable message delivery between producers and consumers
+    - name: Event Streaming
+      description: High-throughput event streaming for real-time processing
+  crossReference:
+    - name: Apache Kafka
+      description: Alternative distributed streaming platform
+    - name: Apache Pulsar
+      description: Cloud-native messaging and streaming platform
+    - name: RabbitMQ
+      description: Alternative message broker

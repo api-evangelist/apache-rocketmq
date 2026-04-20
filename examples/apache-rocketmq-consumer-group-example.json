@@ -1,0 +1,6 @@
+{
+  "name": "example-name",
+  "consumeFromWhere": "CONSUME_FROM_LAST_OFFSET",
+  "consumeType": "CONSUME_ACTIVELY",
+  "messageModel": "BROADCASTING"
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-rocketmq/refs/heads/main/json-structure/apache-rocketmq-receive-request-structure.json",
+  "description": "Request to receive messages from a topic",
+  "type": "object",
+  "properties": {
+    "topic": {
+      "type": "string",
+      "description": "Topic to consume from"
+    },
+    "consumerGroup": {
+      "type": "string",
+      "description": "Consumer group identifier"
+    },
+    "maxMessages": {
+      "type": "int32",
+      "description": "Maximum messages to pull"
+    },
+    "invisibleDuration": {
+      "type": "int32",
+      "description": "Invisible duration in milliseconds"
+    }
+  },
+  "required": [
+    "topic",
+    "consumerGroup"
+  ],
+  "name": "ReceiveRequest"
+}

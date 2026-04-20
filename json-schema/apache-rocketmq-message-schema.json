@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-rocketmq/refs/heads/main/json-schema/apache-rocketmq-message-schema.json",
+  "title": "Message",
+  "description": "Received RocketMQ message",
+  "type": "object",
+  "properties": {
+    "msgId": {
+      "type": "string",
+      "description": "Message identifier"
+    },
+    "topic": {
+      "type": "string",
+      "description": "Topic name"
+    },
+    "body": {
+      "type": "string",
+      "description": "Message body"
+    },
+    "tag": {
+      "type": "string",
+      "description": "Message tag"
+    },
+    "keys": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "properties": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "bornTimestamp": {
+      "type": "integer",
+      "format": "int64",
+      "description": "Message creation timestamp in milliseconds"
+    },
+    "receiptHandle": {
+      "type": "string",
+      "description": "Handle for acknowledging the message"
+    }
+  }
+}

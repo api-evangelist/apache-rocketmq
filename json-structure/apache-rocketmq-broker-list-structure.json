@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-rocketmq/refs/heads/main/json-structure/apache-rocketmq-broker-list-structure.json",
+  "description": "List of RocketMQ brokers",
+  "type": "object",
+  "properties": {
+    "brokers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Broker"
+      }
+    }
+  },
+  "name": "BrokerList"
+}
