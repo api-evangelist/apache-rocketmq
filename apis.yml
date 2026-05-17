@@ -52,7 +52,7 @@ common:
   url: vocabulary/apache-rocketmq-vocabulary.yaml
 - type: NaftikoCapability
   url: capabilities/rocketmq-workflow.yaml
-- type: JSON-LD
+- type: JSONLD
   url: json-ld/apache-rocketmq-context.jsonld
 - type: Features
   data:
