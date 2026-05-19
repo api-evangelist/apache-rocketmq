@@ -1,8 +1,8 @@
 aid: apache-rocketmq
 name: Apache RocketMQ
-description: >-
-  Apache RocketMQ is a distributed messaging and streaming platform with low latency, high performance, and reliability. It provides trillion-level message capacity with rich message types including normal,
-  transactional, delayed, and ordered messages.
+description: Apache RocketMQ is a distributed messaging and streaming platform with low latency, high performance, and reliability.
+  It provides trillion-level message capacity with rich message types including normal, transactional, delayed, and ordered
+  messages.
 type: Index
 position: Consumer
 access: 3rd-Party
@@ -16,16 +16,14 @@ tags:
 - Apache
 - Open Source
 created: '2026-03-16'
-modified: '2026-04-19'
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/apache-rocketmq/refs/heads/main/apis.yml
+modified: '2026-05-19'
+url: https://raw.githubusercontent.com/api-evangelist/apache-rocketmq/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
 - aid: apache-rocketmq:apache-rocketmq
   name: Apache RocketMQ
-  description: >-
-    RocketMQ provides producer and consumer APIs with client SDKs in Java, Go, Python, C++, C#, Node.js, and Rust, along with a REST API and gRPC-based remoting for message operations, topic management,
-    and cluster administration.
+  description: RocketMQ provides producer and consumer APIs with client SDKs in Java, Go, Python, C++, C#, Node.js, and Rust,
+    along with a REST API and gRPC-based remoting for message operations, topic management, and cluster administration.
   humanURL: https://rocketmq.apache.org/docs/
   tags:
   - Cloud Native
@@ -38,6 +36,14 @@ apis:
     url: https://rocketmq.apache.org/docs/
   - type: OpenAPI
     url: openapi/apache-rocketmq-rest-api.yaml
+  - type: NaftikoCapability
+    url: capabilities/rest-brokers.yaml
+  - type: NaftikoCapability
+    url: capabilities/rest-consumergroups.yaml
+  - type: NaftikoCapability
+    url: capabilities/rest-messages.yaml
+  - type: NaftikoCapability
+    url: capabilities/rest-topics.yaml
 maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
@@ -50,8 +56,6 @@ common:
   url: rules/apache-rocketmq-spectral-rules.yml
 - type: Vocabulary
   url: vocabulary/apache-rocketmq-vocabulary.yaml
-- type: NaftikoCapability
-  url: capabilities/rocketmq-workflow.yaml
 - type: JSONLD
   url: json-ld/apache-rocketmq-context.jsonld
 - type: Features

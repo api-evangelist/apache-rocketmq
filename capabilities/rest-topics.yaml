@@ -1,0 +1,177 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Apache RocketMQ REST API — Topics
+  description: 'Apache RocketMQ REST API — Topics. 4 operations. Lead operation: Apache RocketMQ List Topics. Self-contained
+    Naftiko capability covering one Apache Rocketmq business surface.'
+  tags:
+  - Apache Rocketmq
+  - Topics
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    APACHE_ROCKETMQ_API_KEY: APACHE_ROCKETMQ_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: rest-topics
+    baseUri: https://rocketmq.example.com/api/v1
+    description: Apache RocketMQ REST API — Topics business capability. Self-contained, no shared references.
+    resources:
+    - name: topics
+      path: /topics
+      operations:
+      - name: listtopics
+        method: GET
+        description: Apache RocketMQ List Topics
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createtopic
+        method: POST
+        description: Apache RocketMQ Create Topic
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: topics-topic
+      path: /topics/{topic}
+      operations:
+      - name: gettopic
+        method: GET
+        description: Apache RocketMQ Get Topic
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: topic
+          in: path
+          type: string
+          required: true
+      - name: deletetopic
+        method: DELETE
+        description: Apache RocketMQ Delete Topic
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: topic
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: rest-topics-rest
+    port: 8080
+    description: REST adapter for Apache RocketMQ REST API — Topics. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/topics
+      name: topics
+      description: REST surface for topics.
+      operations:
+      - method: GET
+        name: listtopics
+        description: Apache RocketMQ List Topics
+        call: rest-topics.listtopics
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createtopic
+        description: Apache RocketMQ Create Topic
+        call: rest-topics.createtopic
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/topics/{topic}
+      name: topics-topic
+      description: REST surface for topics-topic.
+      operations:
+      - method: GET
+        name: gettopic
+        description: Apache RocketMQ Get Topic
+        call: rest-topics.gettopic
+        with:
+          topic: rest.topic
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletetopic
+        description: Apache RocketMQ Delete Topic
+        call: rest-topics.deletetopic
+        with:
+          topic: rest.topic
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: rest-topics-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Apache RocketMQ REST API — Topics. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: apache-rocketmq-list-topics
+      description: Apache RocketMQ List Topics
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: rest-topics.listtopics
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: apache-rocketmq-create-topic
+      description: Apache RocketMQ Create Topic
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: rest-topics.createtopic
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: apache-rocketmq-get-topic
+      description: Apache RocketMQ Get Topic
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: rest-topics.gettopic
+      with:
+        topic: tools.topic
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: apache-rocketmq-delete-topic
+      description: Apache RocketMQ Delete Topic
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: rest-topics.deletetopic
+      with:
+        topic: tools.topic
+      outputParameters:
+      - type: object
+        mapping: $.
