@@ -36,13 +36,13 @@ apis:
     url: https://rocketmq.apache.org/docs/
   - type: OpenAPI
     url: openapi/apache-rocketmq-rest-api.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/rest-brokers.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/rest-consumergroups.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/rest-messages.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/rest-topics.yaml
 maintainers:
 - FN: Kin Lane
