@@ -48,6 +48,10 @@ maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
 common:
+- type: VulnerabilityDisclosure
+  url: security/apache-rocketmq-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/apache-rocketmq-domain-security.yml
 - type: GitHubOrganization
   url: https://github.com/apache/rocketmq
 - type: Documentation
