@@ -1,0 +1,146 @@
+openapi: 3.0.3
+info:
+  title: Apache RocketMQ REST Brokers Topics API
+  description: Apache RocketMQ is a cloud-native messaging and streaming platform. This API provides REST endpoints for sending and receiving messages, managing topics and subscriptions, and monitoring brokers and consumer groups.
+  version: 5.1.0
+  contact:
+    name: Apache RocketMQ
+    url: https://rocketmq.apache.org/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://rocketmq.example.com/api/v1
+  description: Apache RocketMQ REST API
+tags:
+- name: Topics
+paths:
+  /topics:
+    get:
+      operationId: listTopics
+      summary: Apache RocketMQ List Topics
+      description: List all topics in the RocketMQ cluster.
+      tags:
+      - Topics
+      x-microcks-operation:
+        dispatcher: RANDOM
+      responses:
+        '200':
+          description: List of topics
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TopicList'
+    post:
+      operationId: createTopic
+      summary: Apache RocketMQ Create Topic
+      description: Create a new topic in the RocketMQ cluster.
+      tags:
+      - Topics
+      x-microcks-operation:
+        dispatcher: RANDOM
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TopicRequest'
+      responses:
+        '201':
+          description: Topic created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Topic'
+  /topics/{topic}:
+    get:
+      operationId: getTopic
+      summary: Apache RocketMQ Get Topic
+      description: Retrieve details of a specific RocketMQ topic.
+      tags:
+      - Topics
+      x-microcks-operation:
+        dispatcher: URI_PARTS
+        dispatcherRules: topic
+      parameters:
+      - name: topic
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Topic details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Topic'
+    delete:
+      operationId: deleteTopic
+      summary: Apache RocketMQ Delete Topic
+      description: Delete a topic from the RocketMQ cluster.
+      tags:
+      - Topics
+      x-microcks-operation:
+        dispatcher: URI_PARTS
+        dispatcherRules: topic
+      parameters:
+      - name: topic
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: Topic deleted
+components:
+  schemas:
+    TopicList:
+      type: object
+      description: List of RocketMQ topics
+      properties:
+        topics:
+          type: array
+          items:
+            $ref: '#/components/schemas/Topic'
+        total:
+          type: integer
+    TopicRequest:
+      type: object
+      description: Request to create a RocketMQ topic
+      required:
+      - name
+      properties:
+        name:
+          type: string
+          description: Topic name
+        clusterName:
+          type: string
+          description: Target cluster
+        queueNum:
+          type: integer
+          description: Number of queues (default 8)
+        perm:
+          type: integer
+          description: Permission (6 = read+write)
+    Topic:
+      type: object
+      description: RocketMQ topic
+      properties:
+        name:
+          type: string
+          description: Topic name
+        clusterName:
+          type: string
+          description: Cluster name
+        queueNum:
+          type: integer
+          description: Number of message queues
+        perm:
+          type: integer
+          description: Permission flags (2=write, 4=read, 6=read+write)
+        topicFilterType:
+          type: string
+          enum:
+          - SINGLE_TAG
+          - MULTI_TAG

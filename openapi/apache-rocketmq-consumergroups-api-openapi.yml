@@ -1,0 +1,108 @@
+openapi: 3.0.3
+info:
+  title: Apache RocketMQ REST Brokers ConsumerGroups API
+  description: Apache RocketMQ is a cloud-native messaging and streaming platform. This API provides REST endpoints for sending and receiving messages, managing topics and subscriptions, and monitoring brokers and consumer groups.
+  version: 5.1.0
+  contact:
+    name: Apache RocketMQ
+    url: https://rocketmq.apache.org/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://rocketmq.example.com/api/v1
+  description: Apache RocketMQ REST API
+tags:
+- name: ConsumerGroups
+paths:
+  /consumer-groups:
+    get:
+      operationId: listConsumerGroups
+      summary: Apache RocketMQ List Consumer Groups
+      description: List all consumer groups in the RocketMQ cluster.
+      tags:
+      - ConsumerGroups
+      x-microcks-operation:
+        dispatcher: RANDOM
+      responses:
+        '200':
+          description: List of consumer groups
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConsumerGroupList'
+    post:
+      operationId: createConsumerGroup
+      summary: Apache RocketMQ Create Consumer Group
+      description: Create a new consumer group for subscribing to topics.
+      tags:
+      - ConsumerGroups
+      x-microcks-operation:
+        dispatcher: RANDOM
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConsumerGroupRequest'
+      responses:
+        '201':
+          description: Consumer group created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConsumerGroup'
+components:
+  schemas:
+    ConsumerGroupRequest:
+      type: object
+      description: Request to create a consumer group
+      required:
+      - name
+      properties:
+        name:
+          type: string
+          description: Consumer group name
+        consumeFromWhere:
+          type: string
+          enum:
+          - CONSUME_FROM_LAST_OFFSET
+          - CONSUME_FROM_FIRST_OFFSET
+        messageModel:
+          type: string
+          enum:
+          - BROADCASTING
+          - CLUSTERING
+    ConsumerGroupList:
+      type: object
+      description: List of consumer groups
+      properties:
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConsumerGroup'
+        total:
+          type: integer
+    ConsumerGroup:
+      type: object
+      description: RocketMQ consumer group
+      properties:
+        name:
+          type: string
+          description: Consumer group name
+        consumeFromWhere:
+          type: string
+          enum:
+          - CONSUME_FROM_LAST_OFFSET
+          - CONSUME_FROM_FIRST_OFFSET
+          - CONSUME_FROM_TIMESTAMP
+        consumeType:
+          type: string
+          enum:
+          - CONSUME_ACTIVELY
+          - CONSUME_PASSIVELY
+        messageModel:
+          type: string
+          enum:
+          - BROADCASTING
+          - CLUSTERING

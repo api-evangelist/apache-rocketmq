@@ -1,0 +1,62 @@
+openapi: 3.0.3
+info:
+  title: Apache RocketMQ REST Brokers API
+  description: Apache RocketMQ is a cloud-native messaging and streaming platform. This API provides REST endpoints for sending and receiving messages, managing topics and subscriptions, and monitoring brokers and consumer groups.
+  version: 5.1.0
+  contact:
+    name: Apache RocketMQ
+    url: https://rocketmq.apache.org/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://rocketmq.example.com/api/v1
+  description: Apache RocketMQ REST API
+tags:
+- name: Brokers
+paths:
+  /brokers:
+    get:
+      operationId: listBrokers
+      summary: Apache RocketMQ List Brokers
+      description: List all brokers in the RocketMQ cluster.
+      tags:
+      - Brokers
+      x-microcks-operation:
+        dispatcher: RANDOM
+      responses:
+        '200':
+          description: List of brokers
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BrokerList'
+components:
+  schemas:
+    Broker:
+      type: object
+      description: RocketMQ broker
+      properties:
+        brokerName:
+          type: string
+          description: Broker name
+        clusterId:
+          type: string
+          description: Cluster identifier
+        brokerId:
+          type: integer
+          description: Broker ID (0=master, >0=slave)
+        brokerAddr:
+          type: string
+          description: Broker address (host:port)
+        version:
+          type: string
+          description: Broker version
+    BrokerList:
+      type: object
+      description: List of RocketMQ brokers
+      properties:
+        brokers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Broker'
