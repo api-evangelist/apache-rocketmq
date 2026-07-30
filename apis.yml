@@ -4,9 +4,21 @@ description: Apache RocketMQ is a distributed messaging and streaming platform w
   It provides trillion-level message capacity with rich message types including normal, transactional, delayed, and ordered
   messages.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apache-rocketmq.png
 tags:
 - Cloud Native
 - Messaging
@@ -20,22 +32,74 @@ modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/apache-rocketmq/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-- aid: apache-rocketmq:apache-rocketmq
-  name: Apache RocketMQ
-  description: RocketMQ provides producer and consumer APIs with client SDKs in Java, Go, Python, C++, C#, Node.js, and Rust,
-    along with a REST API and gRPC-based remoting for message operations, topic management, and cluster administration.
+- aid: apache-rocketmq:apache-rocketmq-brokers-api
+  name: Apache RocketMQ Brokers API
+  description: The Brokers API from Apache RocketMQ — 1 operation(s) for brokers.
   humanURL: https://rocketmq.apache.org/docs/
   tags:
-  - Cloud Native
-  - Messaging
-  - REST
-  - Apache
-  - Open Source
+  - Brokers
   properties:
+  - type: OpenAPI
+    url: openapi/apache-rocketmq-brokers-api-openapi.yml
   - type: Documentation
     url: https://rocketmq.apache.org/docs/
+  - type: X-NaftikoCapability
+    url: capabilities/rest-brokers.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/rest-consumergroups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/rest-messages.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/rest-topics.yaml
+- aid: apache-rocketmq:apache-rocketmq-consumergroups-api
+  name: Apache RocketMQ ConsumerGroups API
+  description: The ConsumerGroups API from Apache RocketMQ — 1 operation(s) for consumergroups.
+  humanURL: https://rocketmq.apache.org/docs/
+  tags:
+  - ConsumerGroups
+  properties:
   - type: OpenAPI
-    url: openapi/apache-rocketmq-rest-api.yaml
+    url: openapi/apache-rocketmq-consumergroups-api-openapi.yml
+  - type: Documentation
+    url: https://rocketmq.apache.org/docs/
+  - type: X-NaftikoCapability
+    url: capabilities/rest-brokers.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/rest-consumergroups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/rest-messages.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/rest-topics.yaml
+- aid: apache-rocketmq:apache-rocketmq-messages-api
+  name: Apache RocketMQ Messages API
+  description: The Messages API from Apache RocketMQ — 3 operation(s) for messages.
+  humanURL: https://rocketmq.apache.org/docs/
+  tags:
+  - Messages
+  properties:
+  - type: OpenAPI
+    url: openapi/apache-rocketmq-messages-api-openapi.yml
+  - type: Documentation
+    url: https://rocketmq.apache.org/docs/
+  - type: X-NaftikoCapability
+    url: capabilities/rest-brokers.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/rest-consumergroups.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/rest-messages.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/rest-topics.yaml
+- aid: apache-rocketmq:apache-rocketmq-topics-api
+  name: Apache RocketMQ Topics API
+  description: The Topics API from Apache RocketMQ — 2 operation(s) for topics.
+  humanURL: https://rocketmq.apache.org/docs/
+  tags:
+  - Topics
+  properties:
+  - type: OpenAPI
+    url: openapi/apache-rocketmq-topics-api-openapi.yml
+  - type: Documentation
+    url: https://rocketmq.apache.org/docs/
   - type: X-NaftikoCapability
     url: capabilities/rest-brokers.yaml
   - type: X-NaftikoCapability
