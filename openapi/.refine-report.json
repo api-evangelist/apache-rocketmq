@@ -1,0 +1,20 @@
+{
+  "provider": "apache-rocketmq",
+  "sources": [
+    "apache-rocketmq-brokers-api-openapi.yml",
+    "apache-rocketmq-consumergroups-api-openapi.yml",
+    "apache-rocketmq-messages-api-openapi.yml",
+    "apache-rocketmq-topics-api-openapi.yml"
+  ],
+  "outputs": [
+    "apache-rocketmq-brokers-api-openapi.yml",
+    "apache-rocketmq-consumergroups-api-openapi.yml",
+    "apache-rocketmq-messages-api-openapi.yml",
+    "apache-rocketmq-topics-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
