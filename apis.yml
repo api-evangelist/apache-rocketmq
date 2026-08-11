@@ -43,14 +43,6 @@ apis:
     url: openapi/apache-rocketmq-brokers-api-openapi.yml
   - type: Documentation
     url: https://rocketmq.apache.org/docs/
-  - type: X-NaftikoCapability
-    url: capabilities/rest-brokers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-consumergroups.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-topics.yaml
 - aid: apache-rocketmq:apache-rocketmq-consumergroups-api
   name: Apache RocketMQ ConsumerGroups API
   description: The ConsumerGroups API from Apache RocketMQ — 1 operation(s) for consumergroups.
@@ -62,14 +54,6 @@ apis:
     url: openapi/apache-rocketmq-consumergroups-api-openapi.yml
   - type: Documentation
     url: https://rocketmq.apache.org/docs/
-  - type: X-NaftikoCapability
-    url: capabilities/rest-brokers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-consumergroups.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-topics.yaml
 - aid: apache-rocketmq:apache-rocketmq-messages-api
   name: Apache RocketMQ Messages API
   description: The Messages API from Apache RocketMQ — 3 operation(s) for messages.
@@ -81,14 +65,6 @@ apis:
     url: openapi/apache-rocketmq-messages-api-openapi.yml
   - type: Documentation
     url: https://rocketmq.apache.org/docs/
-  - type: X-NaftikoCapability
-    url: capabilities/rest-brokers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-consumergroups.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-topics.yaml
 - aid: apache-rocketmq:apache-rocketmq-topics-api
   name: Apache RocketMQ Topics API
   description: The Topics API from Apache RocketMQ — 2 operation(s) for topics.
@@ -100,14 +76,6 @@ apis:
     url: openapi/apache-rocketmq-topics-api-openapi.yml
   - type: Documentation
     url: https://rocketmq.apache.org/docs/
-  - type: X-NaftikoCapability
-    url: capabilities/rest-brokers.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-consumergroups.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-messages.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-topics.yaml
 maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
