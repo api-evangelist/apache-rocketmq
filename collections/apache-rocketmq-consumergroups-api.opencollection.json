@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache RocketMQ REST Brokers ConsumerGroups API",
+    "version": "5.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ConsumerGroups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache RocketMQ List Consumer Groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rocketmq.example.com/api/v1/consumer-groups"
+          },
+          "docs": "List all consumer groups in the RocketMQ cluster."
+        },
+        {
+          "info": {
+            "name": "Apache RocketMQ Create Consumer Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rocketmq.example.com/api/v1/consumer-groups",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new consumer group for subscribing to topics."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

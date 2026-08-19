@@ -1,0 +1,193 @@
+{
+  "item": [
+    {
+      "id": "407e77c5-de01-4728-afdb-b9982fbf2726",
+      "name": "ConsumerGroups",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bf7196d2-06b8-4e1a-8e04-c27a9051e5ad",
+          "name": "Apache RocketMQ List Consumer Groups",
+          "request": {
+            "name": "Apache RocketMQ List Consumer Groups",
+            "description": {
+              "content": "List all consumer groups in the RocketMQ cluster.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "consumer-groups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "153a1491-b248-4c9e-8722-bd24d95eedb5",
+              "name": "List of consumer groups",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "consumer-groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"groups\": [\n    {\n      \"name\": \"string\",\n      \"consumeFromWhere\": \"CONSUME_FROM_LAST_OFFSET\",\n      \"consumeType\": \"CONSUME_PASSIVELY\",\n      \"messageModel\": \"CLUSTERING\"\n    },\n    {\n      \"name\": \"string\",\n      \"consumeFromWhere\": \"CONSUME_FROM_LAST_OFFSET\",\n      \"consumeType\": \"CONSUME_ACTIVELY\",\n      \"messageModel\": \"CLUSTERING\"\n    }\n  ],\n  \"total\": 4414\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5e485f24-90d9-4f38-8809-45620ca31d88",
+          "name": "Apache RocketMQ Create Consumer Group",
+          "request": {
+            "name": "Apache RocketMQ Create Consumer Group",
+            "description": {
+              "content": "Create a new consumer group for subscribing to topics.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "consumer-groups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"consumeFromWhere\": \"<string>\",\n  \"messageModel\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "533c8324-f1f7-4a04-be8a-a4a566a90c97",
+              "name": "Consumer group created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "consumer-groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"consumeFromWhere\": \"<string>\",\n  \"messageModel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"consumeFromWhere\": \"CONSUME_FROM_LAST_OFFSET\",\n  \"consumeType\": \"CONSUME_ACTIVELY\",\n  \"messageModel\": \"BROADCASTING\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://rocketmq.example.com/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e2ac7da0-bb7a-4c62-9123-ec2f3e3b4f2a",
+    "name": "Apache RocketMQ REST Brokers ConsumerGroups API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Apache RocketMQ is a cloud-native messaging and streaming platform. This API provides REST endpoints for sending and receiving messages, managing topics and subscriptions, and monitoring brokers and consumer groups.\n\nContact Support:\n Name: Apache RocketMQ",
+      "type": "text/plain"
+    }
+  }
+}

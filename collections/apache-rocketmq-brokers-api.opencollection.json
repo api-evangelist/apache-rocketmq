@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache RocketMQ REST Brokers API",
+    "version": "5.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Brokers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache RocketMQ List Brokers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rocketmq.example.com/api/v1/brokers"
+          },
+          "docs": "List all brokers in the RocketMQ cluster."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

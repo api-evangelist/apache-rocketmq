@@ -1,0 +1,63 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache RocketMQ REST Brokers Messages API",
+    "version": "5.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Messages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache RocketMQ Send Message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rocketmq.example.com/api/v1/messages",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Send a message to a RocketMQ topic."
+        },
+        {
+          "info": {
+            "name": "Apache RocketMQ Receive Messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rocketmq.example.com/api/v1/messages/receive",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Pull messages from a topic for a consumer group."
+        },
+        {
+          "info": {
+            "name": "Apache RocketMQ Acknowledge Message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rocketmq.example.com/api/v1/messages/ack",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Acknowledge message consumption to commit the offset."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

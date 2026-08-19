@@ -1,0 +1,80 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache RocketMQ REST Brokers Topics API",
+    "version": "5.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Topics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache RocketMQ List Topics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rocketmq.example.com/api/v1/topics"
+          },
+          "docs": "List all topics in the RocketMQ cluster."
+        },
+        {
+          "info": {
+            "name": "Apache RocketMQ Create Topic",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rocketmq.example.com/api/v1/topics",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new topic in the RocketMQ cluster."
+        },
+        {
+          "info": {
+            "name": "Apache RocketMQ Get Topic",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rocketmq.example.com/api/v1/topics/:topic",
+            "params": [
+              {
+                "name": "topic",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve details of a specific RocketMQ topic."
+        },
+        {
+          "info": {
+            "name": "Apache RocketMQ Delete Topic",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://rocketmq.example.com/api/v1/topics/:topic",
+            "params": [
+              {
+                "name": "topic",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a topic from the RocketMQ cluster."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

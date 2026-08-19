@@ -1,0 +1,299 @@
+{
+  "item": [
+    {
+      "id": "54123d6b-57cc-4660-943f-2e13e5f27e9b",
+      "name": "Messages",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b15424b1-7ee0-442e-b3bb-d06b928c531c",
+          "name": "Apache RocketMQ Send Message",
+          "request": {
+            "name": "Apache RocketMQ Send Message",
+            "description": {
+              "content": "Send a message to a RocketMQ topic.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "messages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"topic\": \"<string>\",\n  \"body\": \"<string>\",\n  \"tag\": \"<string>\",\n  \"keys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"properties\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\"\n  },\n  \"delayLevel\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ae5a5415-0789-451a-90a6-143548a45852",
+              "name": "Message sent successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "messages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"topic\": \"<string>\",\n  \"body\": \"<string>\",\n  \"tag\": \"<string>\",\n  \"keys\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"properties\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"delayLevel\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"msgId\": \"string\",\n  \"offsetMsgId\": \"string\",\n  \"queueOffset\": 6269,\n  \"queueId\": 4943,\n  \"sendStatus\": \"FLUSH_SLAVE_TIMEOUT\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8b4cd5e0-23ee-4395-a4cd-cc5799fccec6",
+          "name": "Apache RocketMQ Receive Messages",
+          "request": {
+            "name": "Apache RocketMQ Receive Messages",
+            "description": {
+              "content": "Pull messages from a topic for a consumer group.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "messages",
+                "receive"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"topic\": \"<string>\",\n  \"consumerGroup\": \"<string>\",\n  \"maxMessages\": \"<integer>\",\n  \"invisibleDuration\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5e3d9381-55f0-4d62-bd97-98463246d6e3",
+              "name": "Messages received",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "messages",
+                    "receive"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"topic\": \"<string>\",\n  \"consumerGroup\": \"<string>\",\n  \"maxMessages\": \"<integer>\",\n  \"invisibleDuration\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"messages\": [\n    {\n      \"msgId\": \"string\",\n      \"topic\": \"string\",\n      \"body\": \"string\",\n      \"tag\": \"string\",\n      \"keys\": [\n        \"string\",\n        \"string\"\n      ],\n      \"properties\": {\n        \"key_0\": \"string\"\n      },\n      \"bornTimestamp\": 6755,\n      \"receiptHandle\": \"string\"\n    },\n    {\n      \"msgId\": \"string\",\n      \"topic\": \"string\",\n      \"body\": \"string\",\n      \"tag\": \"string\",\n      \"keys\": [\n        \"string\",\n        \"string\"\n      ],\n      \"properties\": {\n        \"key_0\": \"string\"\n      },\n      \"bornTimestamp\": 3782,\n      \"receiptHandle\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ac4cd6be-c5de-4be6-b70c-4af51eb8f731",
+          "name": "Apache RocketMQ Acknowledge Message",
+          "request": {
+            "name": "Apache RocketMQ Acknowledge Message",
+            "description": {
+              "content": "Acknowledge message consumption to commit the offset.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "messages",
+                "ack"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"receiptHandle\": \"<string>\",\n  \"topic\": \"<string>\",\n  \"consumerGroup\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "83ec9b9e-01c4-4ec4-a12b-4b0d38781bb7",
+              "name": "Message acknowledged",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "messages",
+                    "ack"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"receiptHandle\": \"<string>\",\n  \"topic\": \"<string>\",\n  \"consumerGroup\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://rocketmq.example.com/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "026b9971-1346-4b09-b3ed-44373aef5a64",
+    "name": "Apache RocketMQ REST Brokers Messages API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Apache RocketMQ is a cloud-native messaging and streaming platform. This API provides REST endpoints for sending and receiving messages, managing topics and subscriptions, and monitoring brokers and consumer groups.\n\nContact Support:\n Name: Apache RocketMQ",
+      "type": "text/plain"
+    }
+  }
+}

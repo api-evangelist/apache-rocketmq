@@ -1,0 +1,102 @@
+{
+  "item": [
+    {
+      "id": "5559b584-ce45-4fef-bd36-532843a82d38",
+      "name": "Brokers",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "40551dba-1c85-4226-8c90-f921f21af685",
+          "name": "Apache RocketMQ List Brokers",
+          "request": {
+            "name": "Apache RocketMQ List Brokers",
+            "description": {
+              "content": "List all brokers in the RocketMQ cluster.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "brokers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dc87167d-e1cd-4017-acfc-f5bae3feb057",
+              "name": "List of brokers",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "brokers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"brokers\": [\n    {\n      \"brokerName\": \"string\",\n      \"clusterId\": \"string\",\n      \"brokerId\": 277,\n      \"brokerAddr\": \"string\",\n      \"version\": \"string\"\n    },\n    {\n      \"brokerName\": \"string\",\n      \"clusterId\": \"string\",\n      \"brokerId\": 9624,\n      \"brokerAddr\": \"string\",\n      \"version\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://rocketmq.example.com/api/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6c12c03e-96e4-4bbf-a922-6ff1b494d18d",
+    "name": "Apache RocketMQ REST Brokers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Apache RocketMQ is a cloud-native messaging and streaming platform. This API provides REST endpoints for sending and receiving messages, managing topics and subscriptions, and monitoring brokers and consumer groups.\n\nContact Support:\n Name: Apache RocketMQ",
+      "type": "text/plain"
+    }
+  }
+}
