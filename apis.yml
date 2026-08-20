@@ -20,6 +20,14 @@ position: Consumer
 access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/apache-rocketmq.png
 tags:
+- Cloud-Native
+- Messaging
+- Message Queue
+- Pub-Sub
+- Streaming
+- Apache
+- Open-Source
+tags_raw:
 - Cloud Native
 - Messaging
 - Message Queue
@@ -48,6 +56,8 @@ apis:
   description: The ConsumerGroups API from Apache RocketMQ — 1 operation(s) for consumergroups.
   humanURL: https://rocketmq.apache.org/docs/
   tags:
+  - Consumer Groups
+  tags_raw:
   - ConsumerGroups
   properties:
   - type: OpenAPI
@@ -59,6 +69,8 @@ apis:
   description: The Messages API from Apache RocketMQ — 3 operation(s) for messages.
   humanURL: https://rocketmq.apache.org/docs/
   tags:
+  - Message
+  tags_raw:
   - Messages
   properties:
   - type: OpenAPI
