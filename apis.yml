@@ -67,7 +67,7 @@ apis:
   description: The ConsumerGroups API from Apache RocketMQ — 1 operation(s) for consumergroups.
   humanURL: https://rocketmq.apache.org/docs/
   tags:
-  - ConsumerGroups
+  - Consumer Groups
   tags_raw:
   - ConsumerGroups
   properties:
