@@ -1,8 +1,8 @@
 aid: apache-rocketmq
 name: Apache RocketMQ
-description: Apache RocketMQ is a distributed messaging and streaming platform with low latency, high performance, and reliability.
-  It provides trillion-level message capacity with rich message types including normal, transactional, delayed, and ordered
-  messages.
+description: Apache RocketMQ is a distributed messaging and streaming platform with low latency, high
+  performance, and reliability. It provides trillion-level message capacity with rich message types including
+  normal, transactional, delayed, and ordered messages.
 type: Index
 deliveryModel:
   model: unknown
@@ -47,7 +47,7 @@ tags_raw:
 - Apache
 - Open Source
 created: '2026-03-16'
-modified: '2026-05-19'
+modified: '2026-09-16'
 url: https://raw.githubusercontent.com/api-evangelist/apache-rocketmq/refs/heads/main/apis.yml
 specificationVersion: '0.23'
 apis:
@@ -103,6 +103,8 @@ maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
 common:
+- type: Website
+  url: https://apache.org
 - type: AgenticAccess
   url: agentic-access/apache-rocketmq-agentic-access.yml
 - type: VulnerabilityDisclosure
