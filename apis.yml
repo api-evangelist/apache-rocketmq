@@ -62,19 +62,6 @@ apis:
     url: openapi/apache-rocketmq-brokers-api-openapi.yml
   - type: Documentation
     url: https://rocketmq.apache.org/docs/
-- aid: apache-rocketmq:apache-rocketmq-consumergroups-api
-  name: Apache RocketMQ ConsumerGroups API
-  description: The ConsumerGroups API from Apache RocketMQ — 1 operation(s) for consumergroups.
-  humanURL: https://rocketmq.apache.org/docs/
-  tags:
-  - Consumer Groups
-  tags_raw:
-  - ConsumerGroups
-  properties:
-  - type: OpenAPI
-    url: openapi/apache-rocketmq-consumergroups-api-openapi.yml
-  - type: Documentation
-    url: https://rocketmq.apache.org/docs/
 - aid: apache-rocketmq:apache-rocketmq-messages-api
   name: Apache RocketMQ Messages API
   description: The Messages API from Apache RocketMQ — 3 operation(s) for messages.
@@ -97,6 +84,17 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/apache-rocketmq-topics-api-openapi.yml
+  - type: Documentation
+    url: https://rocketmq.apache.org/docs/
+- aid: apache-rocketmq:apache-rocketmq-consumer-groups-api
+  name: Apache RocketMQ Consumer Groups API
+  description: The Consumer Groups API from Apache RocketMQ — 1 operation(s) for consumer groups.
+  humanURL: https://rocketmq.apache.org/docs/
+  tags:
+  - Consumer Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/apache-rocketmq-consumer-groups-api-openapi.yml
   - type: Documentation
     url: https://rocketmq.apache.org/docs/
 maintainers:
