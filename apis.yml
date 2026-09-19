@@ -80,6 +80,8 @@ apis:
   description: The Topics API from Apache RocketMQ — 2 operation(s) for topics.
   humanURL: https://rocketmq.apache.org/docs/
   tags:
+  - Topic
+  tags_raw:
   - Topics
   properties:
   - type: OpenAPI
