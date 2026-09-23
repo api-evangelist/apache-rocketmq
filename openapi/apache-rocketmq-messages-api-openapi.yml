@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Apache RocketMQ REST Brokers Messages API
+  title: Apache RocketMQ REST Messages API
   description: Apache RocketMQ is a cloud-native messaging and streaming platform. This API provides REST endpoints for sending and receiving messages, managing topics and subscriptions, and monitoring brokers and consumer groups.
   version: 5.1.0
   contact:
@@ -79,25 +79,14 @@ paths:
           description: Message acknowledged
 components:
   schemas:
-    ReceiveRequest:
+    ReceiveResult:
       type: object
-      description: Request to receive messages from a topic
-      required:
-      - topic
-      - consumerGroup
+      description: Result of receiving messages
       properties:
-        topic:
-          type: string
-          description: Topic to consume from
-        consumerGroup:
-          type: string
-          description: Consumer group identifier
-        maxMessages:
-          type: integer
-          description: Maximum messages to pull
-        invisibleDuration:
-          type: integer
-          description: Invisible duration in milliseconds
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/Message'
     SendResult:
       type: object
       description: Result of sending a message
@@ -122,60 +111,6 @@ components:
           - FLUSH_DISK_TIMEOUT
           - FLUSH_SLAVE_TIMEOUT
           - SLAVE_NOT_AVAILABLE
-    ReceiveResult:
-      type: object
-      description: Result of receiving messages
-      properties:
-        messages:
-          type: array
-          items:
-            $ref: '#/components/schemas/Message'
-    AckRequest:
-      type: object
-      description: Request to acknowledge a message
-      required:
-      - receiptHandle
-      - topic
-      - consumerGroup
-      properties:
-        receiptHandle:
-          type: string
-          description: Receipt handle from receive response
-        topic:
-          type: string
-          description: Topic name
-        consumerGroup:
-          type: string
-          description: Consumer group
-    MessageRequest:
-      type: object
-      description: Request to send a message to RocketMQ
-      required:
-      - topic
-      - body
-      properties:
-        topic:
-          type: string
-          description: Target topic name
-        body:
-          type: string
-          description: Message body content
-        tag:
-          type: string
-          description: Message tag for filtering
-        keys:
-          type: array
-          items:
-            type: string
-          description: Message keys for lookup
-        properties:
-          type: object
-          additionalProperties:
-            type: string
-          description: User-defined message properties
-        delayLevel:
-          type: integer
-          description: Delay level for scheduled messages (0=no delay)
     Message:
       type: object
       description: Received RocketMQ message
@@ -207,3 +142,68 @@ components:
         receiptHandle:
           type: string
           description: Handle for acknowledging the message
+    AckRequest:
+      type: object
+      description: Request to acknowledge a message
+      required:
+      - receiptHandle
+      - topic
+      - consumerGroup
+      properties:
+        receiptHandle:
+          type: string
+          description: Receipt handle from receive response
+        topic:
+          type: string
+          description: Topic name
+        consumerGroup:
+          type: string
+          description: Consumer group
+    ReceiveRequest:
+      type: object
+      description: Request to receive messages from a topic
+      required:
+      - topic
+      - consumerGroup
+      properties:
+        topic:
+          type: string
+          description: Topic to consume from
+        consumerGroup:
+          type: string
+          description: Consumer group identifier
+        maxMessages:
+          type: integer
+          description: Maximum messages to pull
+        invisibleDuration:
+          type: integer
+          description: Invisible duration in milliseconds
+    MessageRequest:
+      type: object
+      description: Request to send a message to RocketMQ
+      required:
+      - topic
+      - body
+      properties:
+        topic:
+          type: string
+          description: Target topic name
+        body:
+          type: string
+          description: Message body content
+        tag:
+          type: string
+          description: Message tag for filtering
+        keys:
+          type: array
+          items:
+            type: string
+          description: Message keys for lookup
+        properties:
+          type: object
+          additionalProperties:
+            type: string
+          description: User-defined message properties
+        delayLevel:
+          type: integer
+          description: Delay level for scheduled messages (0=no delay)
