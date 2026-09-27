@@ -79,14 +79,6 @@ paths:
           description: Message acknowledged
 components:
   schemas:
-    ReceiveResult:
-      type: object
-      description: Result of receiving messages
-      properties:
-        messages:
-          type: array
-          items:
-            $ref: '#/components/schemas/Message'
     SendResult:
       type: object
       description: Result of sending a message
@@ -111,6 +103,60 @@ components:
           - FLUSH_DISK_TIMEOUT
           - FLUSH_SLAVE_TIMEOUT
           - SLAVE_NOT_AVAILABLE
+    ReceiveResult:
+      type: object
+      description: Result of receiving messages
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/Message'
+    AckRequest:
+      type: object
+      description: Request to acknowledge a message
+      required:
+      - receiptHandle
+      - topic
+      - consumerGroup
+      properties:
+        receiptHandle:
+          type: string
+          description: Receipt handle from receive response
+        topic:
+          type: string
+          description: Topic name
+        consumerGroup:
+          type: string
+          description: Consumer group
+    MessageRequest:
+      type: object
+      description: Request to send a message to RocketMQ
+      required:
+      - topic
+      - body
+      properties:
+        topic:
+          type: string
+          description: Target topic name
+        body:
+          type: string
+          description: Message body content
+        tag:
+          type: string
+          description: Message tag for filtering
+        keys:
+          type: array
+          items:
+            type: string
+          description: Message keys for lookup
+        properties:
+          type: object
+          additionalProperties:
+            type: string
+          description: User-defined message properties
+        delayLevel:
+          type: integer
+          description: Delay level for scheduled messages (0=no delay)
     Message:
       type: object
       description: Received RocketMQ message
@@ -142,23 +188,6 @@ components:
         receiptHandle:
           type: string
           description: Handle for acknowledging the message
-    AckRequest:
-      type: object
-      description: Request to acknowledge a message
-      required:
-      - receiptHandle
-      - topic
-      - consumerGroup
-      properties:
-        receiptHandle:
-          type: string
-          description: Receipt handle from receive response
-        topic:
-          type: string
-          description: Topic name
-        consumerGroup:
-          type: string
-          description: Consumer group
     ReceiveRequest:
       type: object
       description: Request to receive messages from a topic
@@ -178,32 +207,3 @@ components:
         invisibleDuration:
           type: integer
           description: Invisible duration in milliseconds
-    MessageRequest:
-      type: object
-      description: Request to send a message to RocketMQ
-      required:
-      - topic
-      - body
-      properties:
-        topic:
-          type: string
-          description: Target topic name
-        body:
-          type: string
-          description: Message body content
-        tag:
-          type: string
-          description: Message tag for filtering
-        keys:
-          type: array
-          items:
-            type: string
-          description: Message keys for lookup
-        properties:
-          type: object
-          additionalProperties:
-            type: string
-          description: User-defined message properties
-        delayLevel:
-          type: integer
-          description: Delay level for scheduled messages (0=no delay)

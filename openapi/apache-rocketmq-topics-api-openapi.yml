@@ -95,6 +95,24 @@ paths:
           description: Topic deleted
 components:
   schemas:
+    TopicRequest:
+      type: object
+      description: Request to create a RocketMQ topic
+      required:
+      - name
+      properties:
+        name:
+          type: string
+          description: Topic name
+        clusterName:
+          type: string
+          description: Target cluster
+        queueNum:
+          type: integer
+          description: Number of queues (default 8)
+        perm:
+          type: integer
+          description: Permission (6 = read+write)
     TopicList:
       type: object
       description: List of RocketMQ topics
@@ -126,21 +144,3 @@ components:
           enum:
           - SINGLE_TAG
           - MULTI_TAG
-    TopicRequest:
-      type: object
-      description: Request to create a RocketMQ topic
-      required:
-      - name
-      properties:
-        name:
-          type: string
-          description: Topic name
-        clusterName:
-          type: string
-          description: Target cluster
-        queueNum:
-          type: integer
-          description: Number of queues (default 8)
-        perm:
-          type: integer
-          description: Permission (6 = read+write)
