@@ -54,16 +54,6 @@ paths:
                 $ref: '#/components/schemas/ConsumerGroup'
 components:
   schemas:
-    ConsumerGroupList:
-      type: object
-      description: List of consumer groups
-      properties:
-        groups:
-          type: array
-          items:
-            $ref: '#/components/schemas/ConsumerGroup'
-        total:
-          type: integer
     ConsumerGroup:
       type: object
       description: RocketMQ consumer group
@@ -87,6 +77,16 @@ components:
           enum:
           - BROADCASTING
           - CLUSTERING
+    ConsumerGroupList:
+      type: object
+      description: List of consumer groups
+      properties:
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConsumerGroup'
+        total:
+          type: integer
     ConsumerGroupRequest:
       type: object
       description: Request to create a consumer group
