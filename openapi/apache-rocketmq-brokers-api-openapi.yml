@@ -33,14 +33,6 @@ paths:
                 $ref: '#/components/schemas/BrokerList'
 components:
   schemas:
-    BrokerList:
-      type: object
-      description: List of RocketMQ brokers
-      properties:
-        brokers:
-          type: array
-          items:
-            $ref: '#/components/schemas/Broker'
     Broker:
       type: object
       description: RocketMQ broker
@@ -60,3 +52,11 @@ components:
         version:
           type: string
           description: Broker version
+    BrokerList:
+      type: object
+      description: List of RocketMQ brokers
+      properties:
+        brokers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Broker'

@@ -79,35 +79,6 @@ paths:
           description: Message acknowledged
 components:
   schemas:
-    MessageRequest:
-      type: object
-      description: Request to send a message to RocketMQ
-      required:
-      - topic
-      - body
-      properties:
-        topic:
-          type: string
-          description: Target topic name
-        body:
-          type: string
-          description: Message body content
-        tag:
-          type: string
-          description: Message tag for filtering
-        keys:
-          type: array
-          items:
-            type: string
-          description: Message keys for lookup
-        properties:
-          type: object
-          additionalProperties:
-            type: string
-          description: User-defined message properties
-        delayLevel:
-          type: integer
-          description: Delay level for scheduled messages (0=no delay)
     Message:
       type: object
       description: Received RocketMQ message
@@ -171,6 +142,35 @@ components:
           - FLUSH_DISK_TIMEOUT
           - FLUSH_SLAVE_TIMEOUT
           - SLAVE_NOT_AVAILABLE
+    MessageRequest:
+      type: object
+      description: Request to send a message to RocketMQ
+      required:
+      - topic
+      - body
+      properties:
+        topic:
+          type: string
+          description: Target topic name
+        body:
+          type: string
+          description: Message body content
+        tag:
+          type: string
+          description: Message tag for filtering
+        keys:
+          type: array
+          items:
+            type: string
+          description: Message keys for lookup
+        properties:
+          type: object
+          additionalProperties:
+            type: string
+          description: User-defined message properties
+        delayLevel:
+          type: integer
+          description: Delay level for scheduled messages (0=no delay)
     ReceiveRequest:
       type: object
       description: Request to receive messages from a topic
