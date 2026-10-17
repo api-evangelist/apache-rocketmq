@@ -118,30 +118,25 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Message'
-    SendResult:
+    ReceiveRequest:
       type: object
-      description: Result of sending a message
+      description: Request to receive messages from a topic
+      required:
+      - topic
+      - consumerGroup
       properties:
-        msgId:
+        topic:
           type: string
-          description: Message identifier
-        offsetMsgId:
+          description: Topic to consume from
+        consumerGroup:
           type: string
-          description: Physical offset message ID
-        queueOffset:
+          description: Consumer group identifier
+        maxMessages:
           type: integer
-          format: int64
-          description: Queue offset of the message
-        queueId:
+          description: Maximum messages to pull
+        invisibleDuration:
           type: integer
-          description: Queue ID the message was sent to
-        sendStatus:
-          type: string
-          enum:
-          - SEND_OK
-          - FLUSH_DISK_TIMEOUT
-          - FLUSH_SLAVE_TIMEOUT
-          - SLAVE_NOT_AVAILABLE
+          description: Invisible duration in milliseconds
     MessageRequest:
       type: object
       description: Request to send a message to RocketMQ
@@ -171,25 +166,6 @@ components:
         delayLevel:
           type: integer
           description: Delay level for scheduled messages (0=no delay)
-    ReceiveRequest:
-      type: object
-      description: Request to receive messages from a topic
-      required:
-      - topic
-      - consumerGroup
-      properties:
-        topic:
-          type: string
-          description: Topic to consume from
-        consumerGroup:
-          type: string
-          description: Consumer group identifier
-        maxMessages:
-          type: integer
-          description: Maximum messages to pull
-        invisibleDuration:
-          type: integer
-          description: Invisible duration in milliseconds
     AckRequest:
       type: object
       description: Request to acknowledge a message
@@ -207,3 +183,27 @@ components:
         consumerGroup:
           type: string
           description: Consumer group
+    SendResult:
+      type: object
+      description: Result of sending a message
+      properties:
+        msgId:
+          type: string
+          description: Message identifier
+        offsetMsgId:
+          type: string
+          description: Physical offset message ID
+        queueOffset:
+          type: integer
+          format: int64
+          description: Queue offset of the message
+        queueId:
+          type: integer
+          description: Queue ID the message was sent to
+        sendStatus:
+          type: string
+          enum:
+          - SEND_OK
+          - FLUSH_DISK_TIMEOUT
+          - FLUSH_SLAVE_TIMEOUT
+          - SLAVE_NOT_AVAILABLE

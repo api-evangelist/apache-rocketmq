@@ -95,16 +95,6 @@ paths:
           description: Topic deleted
 components:
   schemas:
-    TopicList:
-      type: object
-      description: List of RocketMQ topics
-      properties:
-        topics:
-          type: array
-          items:
-            $ref: '#/components/schemas/Topic'
-        total:
-          type: integer
     TopicRequest:
       type: object
       description: Request to create a RocketMQ topic
@@ -144,3 +134,13 @@ components:
           enum:
           - SINGLE_TAG
           - MULTI_TAG
+    TopicList:
+      type: object
+      description: List of RocketMQ topics
+      properties:
+        topics:
+          type: array
+          items:
+            $ref: '#/components/schemas/Topic'
+        total:
+          type: integer
