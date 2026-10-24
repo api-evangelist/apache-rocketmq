@@ -1,33 +1,19 @@
 {
   "provider": "apache-rocketmq",
   "sources": [
-    "_original/apache-rocketmq-rest-api.yaml"
+    "_original/apache-rocketmq-openapi.json"
   ],
   "outputs": [
-    "apache-rocketmq-brokers-api-openapi.yml",
-    "apache-rocketmq-consumergroups-api-openapi.yml",
-    "apache-rocketmq-messages-api-openapi.yml",
-    "apache-rocketmq-topics-api-openapi.yml"
+    "apache-rocketmq-queues-api-openapi.yml",
+    "apache-rocketmq-status-api-openapi.yml"
   ],
-  "archived": [
-    "deleted 1 superseded output(s) from the previous generation"
-  ],
+  "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
     "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
-    "apache-rocketmq-rest-api.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apache-rocketmq-rest-api.yaml: declared missing tag: Brokers",
-    "apache-rocketmq-rest-api.yaml: declared missing tag: ConsumerGroups",
-    "apache-rocketmq-rest-api.yaml: declared missing tag: Messages",
-    "apache-rocketmq-rest-api.yaml: declared missing tag: Topics",
-    "superseded outputs removed: apache-rocketmq-consumer-groups-api-openapi.yml",
-    "apis.yml register: written (+1 apis, 4 total)"
+    "apache-rocketmq-openapi.json: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "apis.yml register: written (+2 apis, 2 total)"
   ],
-  "skipped": [
-    "apache-rocketmq-brokers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "apache-rocketmq-consumer-groups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "apache-rocketmq-messages-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "apache-rocketmq-topics-api-openapi.yml: previously refined output, superseded by openapi/_original/"
-  ]
+  "skipped": []
 }
